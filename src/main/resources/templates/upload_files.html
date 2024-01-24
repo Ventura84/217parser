@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Разбор сообщений 217</title>
+</head>
+<body>
+<div layout:fragment="contentPanel" class="form-container">
+    <h3>Разбор сообщений 217</h3>
+<!--    <form method="POST" enctype="multipart/form-data" action="" >-->
+<!--        <input type="file" name="files" multiple /> <br /><br />-->
+<!--        <input type="submit" value="UPLOAD AND PROCESS" />-->
+<!--    </form>-->
+
+    <form method="POST" enctype="multipart/form-data" action="/service/parser-217" >
+        <button style="display:block;width:150px; height:30px;" onclick="document.getElementById('files').click()">ВЫБРАТЬ ФАЙЛ(Ы)</button>
+        <input type="file" id="files" name="files" multiple style="display:none" /> <br /><br />
+        <input type="submit" style="display:block;width:150px; height:30px;" value="ПОГНАЛИ !" />
+    </form>
+</div>
+</body>
+</html>

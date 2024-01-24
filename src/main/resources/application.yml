@@ -1,0 +1,59 @@
+app:
+  name: 217-parser
+  trace-logging:
+    enabled: true
+  show-sql: false
+  limits:
+    max-file-size: 10MB
+    max-request-size: 200MB
+    max-http-header-size: 16KB
+#  db:
+#    name: railway
+#    host: localhost
+#    port: 5432
+#    username: dapio
+#    password: dapioPassword888815173____162b1knx888
+
+
+server:
+  max-http-header-size: ${app.limits.max-http-header-size}
+  port: 80
+
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: ${app.limits.max-file-size}
+      max-request-size: ${app.limits.max-request-size}
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: ${app.name}
+#  datasource:
+#    url: jdbc:postgresql://${app.db.host}:${app.db.port}/${app.db.name}
+#    username: ${app.db.username}
+#    password: ${app.db.password}
+#    app:
+#      hikari:
+#        auto-commit: false
+#        pool-name: hikari-app-cp
+#        username: ${app.db.username}
+#        password: ${app.db.password}
+#        jdbc-url: jdbc:postgresql://${app.db.host}:${app.db.port}/${app.db.name}
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#    properties:
+#      show-sql: ${app.show-sql}
+#      hibernate:
+#        format_sql: true
+#        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+#        order_updates: true
+#        order_inserts: true
+#        jdbc:
+#          time_zone: UTC
+#          batch_size: 25
+#          batch_versioned_data: true
